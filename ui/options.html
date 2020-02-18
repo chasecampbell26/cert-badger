@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="default_threshold">
+      Show certificates expiring in
+      <input type="number" id="default_threshold" min="1">
+      days by default.
+    </label>
+    <h3>Custom thresholds</h3>
+    Show expiring certificates for the following domains:
+    <table id="domain_table"></table>
+    <script src="options.js"></script>
+  </body>
+</html>

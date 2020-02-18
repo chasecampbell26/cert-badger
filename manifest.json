@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "CertBadger",
+  "version": "0.1.0",
+  "description": "Displays a badge for TLS/SSL certificates nearing end of validity.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "addon@certbadger"
+    }
+  },
+  "permissions": [
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "https://*/*"
+  ],
+  "icons": {
+    "48": "icons/certbadger.svg"
+  },
+  "browser_action": {
+    "default_icon": "icons/toolbar.svg",
+    "default_title": "CertBadger",
+    "default_popup": "ui/cert_list.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "options_ui": {
+    "page": "ui/options.html"
+  }
+}
