@@ -50,9 +50,9 @@ function redrawDomainTable() {
         const row = document.createElement("tr");
         row.innerHTML = `
           <td><button>x</button></td>
-          <td>${domain}</td>
+          <td></td>
           <td>
-            <input type="number" min="1" value="${thresholds[domain]}">
+            <input type="number" min="1">
           </td>
         `;
         const deleteButton = row.getElementsByTagName("button")[0];
@@ -61,7 +61,10 @@ function redrawDomainTable() {
             .then(redrawDomainTable)
             .catch(console.error);
         };
+        const domainCell = row.getElementsByTagName("td")[1];
+        domainCell.appendChild(document.createTextNode(domain));
         const thresholdBox = row.getElementsByTagName("input")[0];
+        thresholdBox.value = thresholds[domain];
         thresholdBox.addEventListener("input", e => {
           bgPage.saveWarnThreshold(domain, e.target.value)
             .catch(console.error);
