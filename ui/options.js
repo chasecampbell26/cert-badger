@@ -34,7 +34,7 @@ function redrawDomainTable() {
   domainTable.innerHTML = `
     <tr>
       <th/>
-      <th>Domain</th>
+      <th>Domain (exact match only)</th>
       <th>Show if expiring in days</th>
     </tr>
   `;
